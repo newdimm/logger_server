@@ -1,0 +1,15 @@
+# Commentary
+# Copy into /etc/systemd/system/logger.service:
+[Unit]
+Description=Logger service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=dimm
+ExecStart=/usr/local/bin/logger
+
+[Install]
+WantedBy=multi-user.target
